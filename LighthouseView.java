@@ -1,7 +1,6 @@
-package de.cau.infprogoo.mvc;
+package de.cau.infprogoo.game;
 
 import java.io.IOException;
-
 import acm.graphics.GImage;
 import de.cau.infprogoo.lighthouse.LighthouseDisplay;
 
@@ -18,7 +17,7 @@ public class LighthouseView {
 		try {
 			display = LighthouseDisplay.getDisplay();
 			display.setUsername("stu222507");
-			display.setToken("API-TOK_yC3N-Y+xD-INr2-phnH-NvZC");
+			display.setToken("API-TOK_6+Rl-k41K-nvIk-jmbL-lFTh");
 		} catch (Exception e) {
 			System.out.println("Connection failed: " + e.getMessage());
 			e.printStackTrace();
@@ -64,10 +63,8 @@ public class LighthouseView {
 		}
 	}
 
-	public void setPiece(int column, int row, int player) {
-
+	public void setStone(int column, int row, int player) {
 		int offset = 2 * row * 28 * 3 + 4 * column * 3;
-
 		try {
 			if (player == 1) {
 				for (int rows = 0; rows < 2; rows++) {
@@ -157,8 +154,11 @@ public class LighthouseView {
 			System.out.println("Connection failed: " + e.getMessage());
 			e.printStackTrace();
 		}
-
 	}
+	
+	// ------------------------------------------------------
+	//			 RESOLVE CLOSEDCHANNELEXCEPTION
+	//-------------------------------------------------------
 
 	public void end() {
 		display.close();
